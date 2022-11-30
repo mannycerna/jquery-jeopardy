@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?ffamily=Crimson+Pro&family=Literata">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -11,15 +13,23 @@
     <h1>Jeopardy Game</h1>
 
     <h2 id="score"> SCORE: </h2>
+    <div id='total'></div>
     
-    <div id="grid"></div>
-
-    <div id="question"></div>
-
-    <label for="answer">Answer:</label>
-
-   <input id="submitFld" type="text"><input type="submit" value="submit" id="submitBtn">
     
+    <container id="grid" class="grid"></container>
+
+    <h2 id="question"></h2>
+
+    <h2 id="inputAnswer"></h2>
+
+    <form id = 'answerForm'>
+      <label for="answer">Answer:</label>
+      <input type="text" id="answer" name="answer"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+   <!-- <span><input id="submitFld" type="text"><input type="submit" value="submit" id="submitBtn"></span> -->
+    
+   
  
     
     <!-- <button id="start">Start</button> -->
