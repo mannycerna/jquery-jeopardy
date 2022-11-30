@@ -1,9 +1,10 @@
 :root {
     --columns-row: 2;
-  color: yellow;
+  color: chartreuse;
+  font-size: 50px;
 }
 body {
-  background-color: rgb(70, 183, 149);
+  background-color: rgb(35, 152, 220);
 }
 #grid {
     display: grid;
@@ -11,6 +12,7 @@ body {
       grid-template-rows: repeat(var(--columns-row), 1fr);
       width: 1000px;
       height: 800px;
+      color: yellow;
   }
  
   card {
@@ -38,3 +40,15 @@ body {
   card:hover{
     background-color: blueviolet;
   }
+
+  #total {
+    /* flex: auto; */
+
+    font-size: 100px;
+   font-family: 'Times New Roman', Times, serif;
+  }
+
+  h2 {
+    font-size: 50px;
+  }
+
