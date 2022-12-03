@@ -14,26 +14,25 @@
 <body>
     <h1>Jeopardy Game</h1>
 
-    <h2> SCORE: </h2>
-    <div id='total'></div>
+    <div> SCORE: </div>
+    <div contentEditable=true data-ph="$" id='total'></div>
+    
     
     
     <container id="grid" class="grid"></container>
-
     <h2 id="question"></h2>
     <h3>For: <span id="questionValue"></span><h3/>
-
     <h2 id="inputAnswer"></h2>
 
 
     
     <form id = 'answerForm'>
-      <label class="form-label" for="answer">Answer:</label>
-      <input class="form-control" type="text" id="answer" name="answer">
+      <label class="form-label" for="answer">Your Answer:</label>
+      <input class="form-control" type="text" id="input" name="input" placeholder="You must enter answer! (Blanks will be marked as incorrect and 0 points given.)">
       <input type="submit" value="Submit">
     </form>
-  
-   <!-- <span><input id="submitFld" type="text"><input type="submit" value="submit" id="submitBtn"></span> -->
+   
+   <!-- <span><input id="submitFld" type="text"><input type="submit" value="submit" id="submitBtn"></span>
     
    
  
