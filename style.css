@@ -62,9 +62,17 @@ h2 {
 .clicked {
 
   pointer-events: none;
-  text-decoration: line-through;    
-  background-color: red;
+  /* text-decoration: line-through;     */
+  background-color: green;
 
   }
+
+  .clicked_wrong_answer {
+
+    pointer-events: none;
+    text-decoration: line-through;    
+    background-color: red;
+  
+    }
 
 

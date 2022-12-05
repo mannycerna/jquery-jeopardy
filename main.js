@@ -17,6 +17,7 @@ console.log(Number(totalScore));
 let groupedData;
 let correctAnswer;
 let randomValue;
+let cardSelected;
 
 
 //async function to fect data (in this case local json file and not an api url)
@@ -95,6 +96,8 @@ readJeopardyData();
           if(getQuestions[i].className === 'one-hundred'){
               getQuestions[i].addEventListener('click', function(){
                 let random = groupedData.$100[Math.floor(Math.random() * groupedData.$100.length)];
+                cardSelected = getQuestions[i].id;
+                console.log(`This is card id#: ${cardSelected}`);
                 question.innerHTML = random.question;
                 questionVal.innerHTML = random.value;
                 console.log(random.answer);
@@ -102,7 +105,7 @@ readJeopardyData();
                 randomValue = random.value;
                 this.classList.add('clicked');
                 console.log('has clicked on card');//testing post clicked
-                return random.answer, random.value;
+                return random.answer, random.value, cardSelected;
                 
    
               })
@@ -110,6 +113,8 @@ readJeopardyData();
             } else if(getQuestions[i].className === 'two-hundred'){
               getQuestions[i].addEventListener('click', function(){
                 let random = groupedData.$200[Math.floor(Math.random() * groupedData.$200.length)];
+                cardSelected = getQuestions[i].id;
+                console.log(`This is card id#: ${cardSelected}`);
                 question.innerHTML = random.question;
                 questionVal.innerHTML = random.value;
                 console.log(random.answer);
@@ -117,7 +122,7 @@ readJeopardyData();
                 randomValue = random.value;
                 this.classList.add('clicked');
                 console.log('has clicked on card');//testing post clicked
-                return random.answer, random.value;
+                return random.answer, random.value, cardSelected;
     
              
               })
@@ -125,6 +130,8 @@ readJeopardyData();
             } else if (getQuestions[i].className === 'four-hundred'){
               getQuestions[i].addEventListener('click', function(){
                 let random = groupedData.$400[Math.floor(Math.random() * groupedData.$400.length)];
+                cardSelected = getQuestions[i].id;
+                console.log(`This is card id#: ${cardSelected}`);
                 question.innerHTML = random.question;
                 questionVal.innerHTML = random.value;
                 console.log(random.answer);
@@ -132,7 +139,7 @@ readJeopardyData();
                 randomValue = random.value;
                 this.classList.add('clicked');
                 console.log('has clicked on card');//testing post clicked
-                return random.answer, random.value;
+                return random.answer, random.value, cardSelected;
     
              
               })
@@ -140,6 +147,8 @@ readJeopardyData();
             } else if (getQuestions[i].className === 'six-hundred'){
               getQuestions[i].addEventListener('click', function(){
                 let random = groupedData.$600[Math.floor(Math.random() * groupedData.$600.length)];
+                cardSelected = getQuestions[i].id;
+                console.log(`This is card id#: ${cardSelected}`);
                 question.innerHTML = random.question;
                 questionVal.innerHTML = random.value;
                 console.log(random.answer);
@@ -147,13 +156,14 @@ readJeopardyData();
                 randomValue = random.value;
                 this.classList.add('clicked');
                 console.log('has clicked on card');//testing post clicked
-                return random.answer, random.value;
+                return random.answer, random.value, cardSelected, cardSelected;
               })
 
             } else if (getQuestions[i].className === 'eight-hundred'){
               getQuestions[i].addEventListener('click', function(){
-                console.log(getQuestions[i].id); //might used as a flag 
                 let random = groupedData.$800[Math.floor(Math.random() * groupedData.$800.length)];
+                cardSelected = getQuestions[i].id;
+                console.log(`This is card id#: ${cardSelected}`); //might used as a flag 
                 question.innerHTML = random.question;
                 questionVal.innerHTML = random.value;
                 console.log(random.answer);
@@ -161,7 +171,7 @@ readJeopardyData();
                 randomValue = random.value;
                 this.classList.add('clicked');
                 console.log('has clicked on card');//testing post clicked
-                return random.answer, random.value;
+                return random.answer, random.value, cardSelected;
                   }) 
                 }     
               }
@@ -172,7 +182,7 @@ readJeopardyData();
             //   }
             
             
-//global code that accepts user input and matches to question from json data
+//global code that cheks answer (accepts user input and matches to question from json data)
 answerForm.addEventListener('submit', function(event){
   event.preventDefault();
   
@@ -191,17 +201,14 @@ answerForm.addEventListener('submit', function(event){
             totalScore += parseInt(newValue);
             console.log(typeof totalScore);
             total.innerText = `$${totalScore}`;
-           
           }  else 
           // console.log(random.answer)
-          {alert('incorrect')}
+          {alert('incorrect');
+          document.getElementById(cardSelected).classList.add('clicked_wrong_answer');
           userInput.value = '';
-        })
+        }
+      })
 
   
 
-                    
-        
-        
-      
- 
+  
