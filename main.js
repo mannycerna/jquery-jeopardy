@@ -13,7 +13,7 @@ let total = document.querySelector('#total');
 let totalScore = 0;
 console.log(Number(totalScore));
 
-//global variables to access data returned by functions
+//global variables to allow access of data returned by addData function
 let groupedData;
 let correctAnswer;
 let randomValue;
@@ -89,7 +89,7 @@ readJeopardyData();
         }
         
     }
-//funcdtion to dynamically link card(square) to random json data based on its classname value
+//function to dynamically link card(square) to random json data based on its classname value and add classname clicked to update style after user selects square
     function addData() {
       let getQuestions = document.querySelectorAll('#grid card');
         for(let i = 0; i < getQuestions.length; i++){
@@ -176,13 +176,13 @@ readJeopardyData();
                 }     
               }
             }
-            // function disable() {
-            //   document.getElementById(`#${getQuestions[i]}.id`).disabled = true;
-            //   console.log('disable');
-            //   }
             
             
-//global code that cheks answer (accepts user input and matches to question from json data)
+/*global code cheks answer (
+  1.  accepts user input, 
+  2.  compares input to answer from json data,)
+  3.  updates score
+  4.  */
 answerForm.addEventListener('submit', function(event){
   event.preventDefault();
   
